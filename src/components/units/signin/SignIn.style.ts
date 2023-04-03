@@ -56,7 +56,7 @@ export const Error = styled.div`
 export const LoginButton = styled.button`
   padding: 16px 10px;
   width: 100%;
-  background-color: #ffd600;
+  background-color: ${(props) => (props.disabled ? '#bdbdbd' : '#ffd600')};
   border: none;
   cursor: pointer;
   border-radius: 8px;
