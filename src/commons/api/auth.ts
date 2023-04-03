@@ -14,4 +14,17 @@ const signIn = async (userInfo: { email: string; password: string }) => {
   }
 };
 
-export const authAPI = { signIn };
+const signUp = async (userInfo: { email: string; password: string }) => {
+  try {
+    const response = await axiosInstance.post('/auth/signup', userInfo);
+
+    return response;
+  } catch (error) {
+    if (error instanceof AxiosError) {
+      return error.response;
+    }
+    console.log(error);
+  }
+};
+
+export const authAPI = { signIn, signUp };
