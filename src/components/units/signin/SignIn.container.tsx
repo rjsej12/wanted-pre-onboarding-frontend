@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import { authAPI } from '../../../commons/api/auth';
 import SignInUI from './SignIn.presenter';
-import { ChangeEvent, useState } from 'react';
+import { ChangeEvent, FormEvent, useState } from 'react';
 import { Validator } from '../../../commons/validation/validation';
 
 export default function SignIn() {
@@ -12,7 +12,7 @@ export default function SignIn() {
     [inputs.email, inputs.password].every((value) => value !== '') &&
     [errors.email, errors.password].every((value) => value === '');
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     const res = await authAPI.signIn({ email: inputs.email, password: inputs.password });

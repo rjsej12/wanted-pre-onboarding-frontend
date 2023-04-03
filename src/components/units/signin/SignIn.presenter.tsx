@@ -1,6 +1,7 @@
 import * as S from './SignIn.style';
+import { ISignInUIProps } from './SignIn.types';
 
-export default function SignInUI(props: any) {
+export default function SignInUI(props: ISignInUIProps) {
   return (
     <S.Wrapper>
       <S.TitleWrapper>
