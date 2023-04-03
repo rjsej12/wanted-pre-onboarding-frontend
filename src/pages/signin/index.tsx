@@ -1,3 +1,5 @@
-export default function SignIn() {
-  return <></>;
+import SignIn from '../../components/units/signin/SignIn.container';
+
+export default function SignInPage() {
+  return <SignIn />;
 }
