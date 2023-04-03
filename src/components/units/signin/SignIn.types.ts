@@ -6,4 +6,9 @@ export interface ISignInUIProps {
   emailError: string;
   passwordError: string;
   isDisabled: boolean;
+  isSignUp?: boolean;
+}
+
+export interface ISignInProps {
+  isSignUp?: boolean;
 }
