@@ -53,14 +53,25 @@ export const Error = styled.div`
   font-size: 12px;
 `;
 
-export const LoginButton = styled.button`
+export const SignInButton = styled.button`
   padding: 16px 10px;
   width: 100%;
   background-color: ${(props) => (props.disabled ? '#bdbdbd' : '#ffd600')};
   border: none;
   cursor: pointer;
   border-radius: 8px;
-  color: #000000;
+  color: ${(props) => (props.disabled ? '#ffffff' : '#000000')};
+  font-size: 16px;
+`;
+
+export const SignUpButton = styled.button`
+  padding: 16px 10px;
+  width: 100%;
+  background-color: ${(props) => (props.disabled ? '#bdbdbd' : '#ffd600')};
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  color: ${(props) => (props.disabled ? '#ffffff' : '#000000')};
   font-size: 16px;
 `;
 
@@ -74,6 +85,15 @@ export const InnerWrapper = styled.div`
 export const Text = styled.span``;
 
 export const MoveToSignUp = styled(Link)`
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: #bdbdbd;
+  text-decoration: underline;
+  font-size: 16px;
+`;
+
+export const MoveToSignIn = styled(Link)`
   border: none;
   background: none;
   cursor: pointer;

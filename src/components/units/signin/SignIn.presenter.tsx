@@ -25,13 +25,32 @@ export default function SignInUI(props: ISignInUIProps) {
           onChange={props.handleChangeInput}
         />
         <S.Error>{props.passwordError}</S.Error>
-        <S.LoginButton data-testid="signin-button" disabled={props.isDisabled}>
-          로그인
-        </S.LoginButton>
+        {props.isSignUp ? (
+          <>
+            <S.SignUpButton data-testid="signup-button" disabled={props.isDisabled}>
+              가입하기
+            </S.SignUpButton>
+          </>
+        ) : (
+          <>
+            <S.SignInButton data-testid="signin-button" disabled={props.isDisabled}>
+              로그인
+            </S.SignInButton>
+          </>
+        )}
       </S.LoginForm>
       <S.InnerWrapper>
-        <S.Text>아직 회원이 아니시라면?</S.Text>
-        <S.MoveToSignUp to="/signup">회원가입</S.MoveToSignUp>
+        {props.isSignUp ? (
+          <>
+            <S.Text>이미 회원이시라면?</S.Text>
+            <S.MoveToSignIn to="/signin">로그인</S.MoveToSignIn>
+          </>
+        ) : (
+          <>
+            <S.Text>아직 회원이 아니시라면?</S.Text>
+            <S.MoveToSignUp to="/signup">회원가입</S.MoveToSignUp>
+          </>
+        )}
       </S.InnerWrapper>
     </S.Wrapper>
   );
