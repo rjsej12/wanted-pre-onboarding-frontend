@@ -23,7 +23,7 @@ const signUp = async (userInfo: { email: string; password: string }) => {
     if (error instanceof AxiosError) {
       return error.response;
     }
-    console.log(error);
+    console.error(error);
   }
 };
 
