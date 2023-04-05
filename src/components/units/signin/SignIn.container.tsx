@@ -22,6 +22,7 @@ export default function SignIn(props: ISignInProps) {
       return;
     }
 
+    localStorage.setItem('accessToken', res?.data.access_token);
     return navigate('/todo');
   };
 
