@@ -8,7 +8,12 @@ export default function TodoItemUI(props: ITodoItemUIProps) {
   return (
     <S.ItemWrapper>
       {props.isEditing ? (
-        <S.ModifyInput type="text" onChange={props.handleChangeModifyInput} value={props.updateTodo} />
+        <S.ModifyInput
+          data-testid="modify-input"
+          type="text"
+          onChange={props.handleChangeModifyInput}
+          value={props.updateTodo}
+        />
       ) : (
         <S.Label onClick={props.handleClickCheckbox}>
           <S.CheckCircle checked={isCompleted}>{isCompleted && <MdDone />}</S.CheckCircle>

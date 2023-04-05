@@ -41,6 +41,7 @@ export default function TodoItem(props: ITodoItemProps) {
   };
 
   const handleClickCancelButton = () => {
+    setUpdateTodo(todo);
     toggleIsEditing();
   };
 
