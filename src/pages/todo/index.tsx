@@ -1,8 +1,8 @@
-import { withAuth } from '../../components/commons/hocs/withAuth';
+import useAuth from '../../components/commons/hooks/useAuth';
 import Todos from '../../components/units/todo/Todos';
 
-const TodoPage = () => {
-  return <Todos />;
-};
+export default function TodoPage() {
+  useAuth();
 
-export default withAuth(TodoPage);
+  return <Todos />;
+}
